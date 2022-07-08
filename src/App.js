@@ -27,8 +27,6 @@ export default function App() {
   }
 
   let weatherData = {
-    // city: "Kyiv",
-    // temperature: 25,
     description: "Cloudy",
     imgUrl: "https://ssl.gstatic.com/onebox/weather/64/cloudy.png",
     precipitation: 70,
