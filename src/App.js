@@ -48,7 +48,7 @@ export default function App() {
           className="my-button border-0"
           title="Current Location"
           id="current-button"
-          href="#"
+          href="/"
         >
           <i className="fa-solid fa-location-dot"></i>
         </a>
