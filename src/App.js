@@ -2,28 +2,23 @@ import React, { useState } from "react";
 import "./App.css";
 import axios from "axios";
 import "bootstrap";
-
-let timeDate = {
-  date: "23",
-  month: "June",
-  day: "Wednesday",
-  hours: 17,
-  minutes: 30,
-};
+import TimeDate from "./TimeDate";
 
 export default function App() {
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState("Kyiv");
   const [loaded, setLoaded] = useState(false);
   const [weather, setWeather] = useState({});
 
   function displayWeather(response) {
     setLoaded(true);
     setWeather({
+      ready: true,
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       description: response.data.weather[0].description,
+      date: new Date(response.data.dt * 1000),
     });
   }
 
@@ -90,21 +85,15 @@ export default function App() {
               <img src={weather.icon} alt={weather.description} />
             </div>
           </div>
-
           <div className="weather-info">
             <div className="info-main">
-              <p>{weather.description}</p>
+              <p class="text-capitalize">{weather.description}</p>
               <p>Humidity: {weather.humidity} %</p>
               <p>Wind: {weather.wind} km/h</p>
             </div>
+
             <div className="other-main">
-              <p>
-                {timeDate.month}, {timeDate.date}
-              </p>
-              <p>{timeDate.day}</p>
-              <p>
-                {timeDate.hours}:{timeDate.minutes}
-              </p>
+              <TimeDate date={weather.date} />
             </div>
           </div>
         </main>
@@ -149,19 +138,11 @@ export default function App() {
 
           <div className="weather-info">
             <div className="info-main">
-              <p>Sunny</p>
+              <p class="text-capitalize">{weather.description}</p>
               <p>Humidity: 40 %</p>
               <p>Wind: 10 km/h</p>
             </div>
-            <div className="other-main">
-              <p>
-                {timeDate.month}, {timeDate.date}
-              </p>
-              <p>{timeDate.day}</p>
-              <p>
-                {timeDate.hours}:{timeDate.minutes}
-              </p>
-            </div>
+            {/* <TimeDate date={weather.date} /> */}
           </div>
         </main>
       </div>
