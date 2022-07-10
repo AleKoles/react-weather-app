@@ -3,6 +3,7 @@ import "./App.css";
 import axios from "axios";
 import "bootstrap";
 import TimeDate from "./TimeDate";
+import WeatherIcon from "./WeatherIcon";
 
 export default function App() {
   const [city, setCity] = useState("Kyiv");
@@ -16,7 +17,7 @@ export default function App() {
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
       description: response.data.weather[0].description,
       date: new Date(response.data.dt * 1000),
     });
@@ -82,7 +83,8 @@ export default function App() {
               </h2>
             </div>
             <div className="pic">
-              <img src={weather.icon} alt={weather.description} />
+              <WeatherIcon code={weather.icon} />
+              {/* <img src={weather.icon} alt={weather.description} /> */}
             </div>
           </div>
           <div className="weather-info">

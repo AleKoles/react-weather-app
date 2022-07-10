@@ -24,8 +24,8 @@
 }
 .container header .my-button:hover,
 .container footer .my-button:hover {
-  border: 1px solid green;
-  color: green;
+  border: 1px solid rgb(38, 113, 135);
+  color: rgb(38, 113, 135);
 }
 .container main {
   margin: 10px 40px;
