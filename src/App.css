@@ -49,6 +49,10 @@
 .container footer {
   justify-content: center;
 }
+footer {
+  text-align: center;
+  letter-spacing: 1px;
+}
 footer .link {
   color: white;
   text-decoration: none;

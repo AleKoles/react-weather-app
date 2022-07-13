@@ -4,6 +4,7 @@ import axios from "axios";
 import "bootstrap";
 import TimeDate from "./TimeDate";
 import WeatherIcon from "./WeatherIcon";
+import Footer from "./Footer";
 
 export default function App() {
   const [city, setCity] = useState("Kyiv");
@@ -83,7 +84,7 @@ export default function App() {
               </h2>
             </div>
             <div className="pic">
-              <WeatherIcon code={weather.icon} />
+              <WeatherIcon code={weather.icon} alt={weather.description} />
               {/* <img src={weather.icon} alt={weather.description} /> */}
             </div>
           </div>
@@ -147,6 +148,7 @@ export default function App() {
             {/* <TimeDate date={weather.date} /> */}
           </div>
         </main>
+        <Footer />
       </div>
     );
   }

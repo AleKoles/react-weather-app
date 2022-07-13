@@ -12,15 +12,3 @@ body {
 body p {
   font-size: 18px;
 }
-
-footer {
-  text-align: center;
-  font-weight: 500;
-}
-footer .link {
-  color: white;
-  text-decoration: none;
-}
-footer .link:hover {
-  color: rgba(104, 105, 105, 0.568);
-}
