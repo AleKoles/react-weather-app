@@ -7,7 +7,7 @@ export default function Footer() {
         target="_blank"
         className="nav-link"
         rel="noreferrer"
-        href="https://github.com/AleKoles/weather-react"
+        href="https://github.com/AleKoles/react-weather-app"
       >
         <i className="fab fa-github" aria-hidden="true"></i> Source Code
       </a>
