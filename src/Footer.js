@@ -5,7 +5,7 @@ export default function Footer() {
     <footer>
       <a
         target="_blank"
-        className="nav-link"
+        className="link"
         rel="noreferrer"
         href="https://github.com/AleKoles/react-weather-app"
       >
