@@ -5,6 +5,7 @@ import "bootstrap";
 import TimeDate from "./TimeDate";
 import WeatherIcon from "./WeatherIcon";
 import Footer from "./Footer";
+import Degrees from "./Degrees";
 
 export default function App() {
   const [city, setCity] = useState("Kyiv");
@@ -70,18 +71,7 @@ export default function App() {
           <div className="top">
             <div className="city-name">
               <h1>{city}</h1>
-              <h2 className="temperature">
-                <strong>{Math.round(weather.temperature)}</strong>
-                <span className="degrees">
-                  <a href="/" id="celsius">
-                    <small>°C</small>
-                  </a>{" "}
-                  |
-                  <a href="/" id="fahrenheit">
-                    <small>°F</small>
-                  </a>
-                </span>
-              </h2>
+              <Degrees celsius={weather.temperature} />
             </div>
             <div className="pic">
               <WeatherIcon code={weather.icon} alt={weather.description} />
@@ -121,18 +111,7 @@ export default function App() {
           <div className="top">
             <div className="city-name">
               <h1>Kyiv</h1>
-              <h2 className="temperature">
-                <strong>25</strong>
-                <span className="degrees">
-                  <a href="/" id="celsius">
-                    <small>°C</small>
-                  </a>{" "}
-                  |
-                  <a href="/" id="fahrenheit">
-                    <small>°F</small>
-                  </a>
-                </span>
-              </h2>
+              <Degrees celsius={weather.temperature} />
             </div>
             <div className="pic">
               <img src={weather.icon} alt={weather.description} />
