@@ -59,18 +59,7 @@ export default function App() {
   if (loaded) {
     return (
       <div className="container">
-        <header>
-          <a
-            className="my-button border-0"
-            title="Current Location"
-            id="current-button"
-            href="/"
-          >
-            <i className="fa-solid fa-location-dot"></i>
-          </a>
-
-          {form}
-        </header>
+        <header>{form}</header>
         <main>
           <div className="top">
             <div className="city-name">
@@ -99,6 +88,6 @@ export default function App() {
     );
   } else {
     search();
-    return "Loading...";
+    return <h3>Loading...</h3>;
   }
 }

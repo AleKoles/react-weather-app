@@ -25,10 +25,9 @@ export default function TimeDate(props) {
   }
   return (
     <div>
-      <p>{day}</p>
-      <p>
-        {hours}:{minutes}
-      </p>
+      <h5>
+        {day} {hours}:{minutes}
+      </h5>
     </div>
   );
 }
