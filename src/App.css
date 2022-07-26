@@ -14,18 +14,16 @@
   justify-content: center;
   margin: 20px 10px;
 }
-.container header .my-button,
-.container footer .my-button {
+.container header .my-button {
   border: 1px solid white;
   color: white;
   padding: 6px 12px;
   border-radius: 5px;
   text-decoration: none;
 }
-.container header .my-button:hover,
-.container footer .my-button:hover {
-  border: 1px solid rgb(38, 113, 135);
-  color: rgb(38, 113, 135);
+.container header .my-button:hover {
+  border-color: rgb(226, 231, 231);
+  opacity: 0.65;
 }
 .container main {
   margin: 10px 40px;
@@ -46,8 +44,11 @@
   align-items: center;
   justify-content: space-around;
 }
-.container footer {
-  justify-content: center;
+.forecast-day {
+  padding-bottom: 5px;
+}
+.temp-min {
+  opacity: 0.65;
 }
 footer {
   text-align: center;
@@ -58,5 +59,5 @@ footer .link {
   text-decoration: none;
 }
 footer .link:hover {
-  color: rgba(104, 105, 105, 0.568);
+  opacity: 0.65;
 }

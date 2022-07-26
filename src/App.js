@@ -6,16 +6,19 @@ import TimeDate from "./TimeDate";
 import WeatherIcon from "./WeatherIcon";
 import Footer from "./Footer";
 import Degrees from "./Degrees";
+import Forecast from "./Forecast";
 
 export default function App() {
   const [city, setCity] = useState("Kyiv");
   const [loaded, setLoaded] = useState(false);
   const [weather, setWeather] = useState({});
+  const [cityText, setCityText] = useState("Kyiv");
 
   function displayWeather(response) {
     setLoaded(true);
     setWeather({
       ready: true,
+      coordinates: response.data.coord,
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
@@ -28,6 +31,7 @@ export default function App() {
   function handleSubmit(event) {
     event.preventDefault();
     search();
+    typeCity();
   }
 
   function search() {
@@ -38,6 +42,10 @@ export default function App() {
 
   function updateCity(event) {
     setCity(event.target.value);
+  }
+
+  function typeCity() {
+    setCityText(city);
   }
 
   let form = (
@@ -62,8 +70,8 @@ export default function App() {
         <header>{form}</header>
         <main>
           <div className="top">
-            <div className="city-name">
-              <h1>{city}</h1>
+            <div className="city-name text-capitalize">
+              <h1>{cityText}</h1>
               <Degrees celsius={weather.temperature} />
             </div>
             <div className="pic">
@@ -73,7 +81,7 @@ export default function App() {
           </div>
           <div className="weather-info">
             <div className="info-main">
-              <p class="text-capitalize">{weather.description}</p>
+              <p className="text-capitalize">{weather.description}</p>
               <p>Humidity: {weather.humidity} %</p>
               <p>Wind: {weather.wind} km/h</p>
             </div>
@@ -83,6 +91,7 @@ export default function App() {
             </div>
           </div>
         </main>
+        <Forecast coordinates={weather.coordinates} />
         <Footer />
       </div>
     );
